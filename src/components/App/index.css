@@ -1,0 +1,81 @@
+h1 {
+  margin: 2vw;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+header .tittle {
+  margin: 2vw;
+  margin-top: 0;
+  margin-right: 0;
+  width: 24%;
+  padding: .9vw;
+  background-color: #EFEFEF;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  margin-bottom: 0;
+}
+
+header .tittle:focus {
+  box-shadow: 0px 0px 30px #A9A9A9;
+  border: none;
+}
+
+header button {
+  border: none;
+  padding: .9vw;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+
+header button:hover {
+  background-color: #CCEAF4;
+}
+
+.todos {
+  display: flex;
+  flex-direction: column;
+}
+
+.todos_container {
+  display: flex;
+  flex-direction: column;
+  margin: 2vw;
+  margin-bottom: 0;
+}
+
+
+.todo_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #CCEAF4;
+  border-radius: 4px;
+  width: 20vw;
+  margin-bottom: .5vw;
+  text-align: left;
+}
+
+.todo_item:last-child {
+  margin-bottom: 0px;
+}
+
+.todo_item header {
+  margin: .5vw;
+  margin-right: none;
+}
+
+.todo_item button {
+  margin: .5vw;
+  padding: .7vw;
+  border-radius: 4px;
+  border: none;
+  background-color: #CCEAF4;
+}
+
+.todo_item button:hover {
+  background-color:#ff3b3eac;
+}
