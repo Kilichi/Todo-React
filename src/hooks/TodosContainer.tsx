@@ -3,9 +3,9 @@ import { TodoType, TodosHookReturnType } from '../types.ts';
 
 
 const defaultTodos = [
-    {id :1, text:'Hacer la cama'},
-    {id :2, text:'Sacar el perro'},
-    {id :3, text:'Hacer la compra'},
+    {id :1, text:'Hacer la cama', done: true},
+    {id :2, text:'Sacar el perro', done: false},
+    {id :3, text:'Hacer la compra', done: false},
 ]
 
 const TodosHook: () => TodosHookReturnType = () => {
@@ -18,14 +18,25 @@ const TodosHook: () => TodosHookReturnType = () => {
 
     const addTodo = (text: string) => {
         if (text.length < 1) return;
-        const newTodo = {
+        const newTodo: TodoType = {
             id: todos.length + 1,
-            text: text
+            text: text,
+            done: false
         };
         setTodos([...todos, newTodo]);
     };
 
-    return [todos, deleteTodo, addTodo];
+    const toggleTodo = (id: number) => {
+        const updatedTodos = todos.map(todo => {
+            if (todo.id === id) {
+                todo.done = !todo.done;
+            }
+            return todo;
+        });
+        setTodos(updatedTodos);
+    }
+
+    return [todos, deleteTodo, addTodo, toggleTodo];
 };
 
 export default TodosHook;
