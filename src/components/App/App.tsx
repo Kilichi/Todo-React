@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import TodosHook from '../../hooks/TodosContainer';
 import { RenderTodos } from '../RenderTodos';
-import { ListAdd } from '@icon-park/react';
+import { ListAdd, Github } from '@icon-park/react';
 import './index.css';
 
 function App() {
@@ -15,13 +15,22 @@ function App() {
     }
   }
 
+  const loginUser = () => {
+    // Todo
+  }
+
   useEffect(() => {
     window.addEventListener('keydown', handleEnter)
   })
 
   return (
     <>
-      <h1>Todo <span>APP</span></h1>
+      <div className="tittle">
+        <h1>Todo <span>APP</span></h1>
+        <button className='button_github' onClick={() => loginUser()}>
+        <Github theme="outline" size="35" fill="#FFFFFF"/>
+        </button>
+      </div>
       <div className="todos">
         <header>
           <input type="text" className='tittle' placeholder='Cualquier cosa que tengas que hacer...' onChange={(event: React.ChangeEvent<HTMLInputElement>) =>setText(event.target.value)} />
